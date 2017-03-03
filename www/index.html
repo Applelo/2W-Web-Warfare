@@ -64,7 +64,37 @@
 </div>
 
 <div role="main" class="ui-content">
-  <p>Pseudo</p>
+  <table data-role="table" class="ui-responsive">
+      <thead>
+        <tr>
+          <th>Pseudo</th>
+          <th>Scores</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Loïs</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>Quantin</td>
+          <td>1209</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+
+<div data-role="page" id="credits">
+<div data-role="header" data-position="fixed">
+  <h1>Crédits</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Accueil</a>
+</div>
+
+<div role="main" class="ui-content">
+  <h1>Une réalisation de :</h1>
+  <p>Loïs Boubault<p>
+  <p>Thibaut Guedj<p>
+  <p>Quantin Solé<p>
 </div>
 </div>
 
@@ -94,6 +124,22 @@
 </div>
 
 </div>
+<script>
+if (typeof (Storage) !== "undefined") {
+
+var person = {
+"firstName": "Shravan Kumar",
+"lastName": "Kasagoni",
+"age": "25",
+"mobileNumber": "1234567890"
+};
+
+localStorage.setItem('person', person);
+}
+else {
+alert("Sorry, your browser does not support web storage...");
+}
+</script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

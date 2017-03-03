@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+
+      	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+      	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+      	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+        <script type="text/javascript" src="lib/hammer/hammer.min.js"></script>
+        <title>2W: Web Warfare</title>
+
+    </head>
+    <body>
+      <body>
+<div data-role="page" id="home">
+<div data-role="header" data-position="fixed">
+  <h1>2W: Web Warfare</h1><a href="#settings" data-icon="gear" data-transition="slideup" class="ui-btn-right">Paramètres</a>
+</div>
+
+<div role="main" class="ui-content" id="home-content">
+    <p><a href="#play" class="ui-btn">Jouer</a></p>
+    <p><a href="#scores" class="ui-btn">Scores</a></p>
+    <p><a href="#credits" class="ui-btn">Crédits</a></p>
+
+</div>
+</div>
+
+<div data-role="page" id="scores">
+<div data-role="header" data-position="fixed">
+  <h1>Scores</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Accueil</a>
+</div>
+
+<div role="main" class="ui-content">
+  <p>Pseudo</p>
+</div>
+</div>
+
+<div data-role="page" id="settings">
+<div data-role="header" data-position="fixed">
+  <h1>Paramètres</h1><a href="#home" data-transition="slideup" data-direction="reverse" data-icon="check" class="ui-btn-right">Sauvegarder</a>
+</div>
+
+<div role="main" class="ui-content">
+  <div class="ui-grid-a center-wrapper">
+      <div class="ui-block-a">
+        <label for="flip-1">Musiques</label>
+        <select name="flip-1" id="flip-1" data-role="slider">
+      	  <option value="false">Non</option>
+      	  <option value="true" selected="selected">Oui</option>
+        </select>
+      </div>
+
+      <div class="ui-block-b center-wrapper">
+        <label for="flip-1">Effets sonores</label>
+        <select name="flip-1" id="flip-1" data-role="slider">
+      	  <option value="false">Non</option>
+      	  <option value="true" selected="selected">Oui</option>
+        </select>
+      </div>
+    </div>
+</div>
+
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
