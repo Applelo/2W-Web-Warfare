@@ -38,40 +38,58 @@
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
-        <title>Hello World</title>
+        <title>2W: Web Warfare</title>
     </head>
     <body>
       <body>
 <div data-role="page" id="home">
 <div data-role="header" data-position="fixed">
-  <h1>App-o-Mat</h1><a href="#settings" data-icon="gear" data-transition="slideup" class="ui-btn-right">Settings</a>
+  <h1>2W: Web Warfare</h1><a href="#settings" data-icon="gear" data-transition="slideup" class="ui-btn-right">Paramètres</a>
 </div>
 
 <div role="main" class="ui-content" id="home-content">
-  <h2>Main page</h2>
-  <p><a href="#next" data-transition="slide">Next Page</a></p>
+    <p><a href="#play" class="ui-btn">Jouer</a></p>
+    <p><a href="#scores" class="ui-btn">Scores</a></p>
+    <p><a href="#credits" class="ui-btn">Crédits</a></p>
+
 </div>
 </div>
 
-<div data-role="page" id="next">
+<div data-role="page" id="scores">
 <div data-role="header" data-position="fixed">
-  <h1>Next</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Home</a>
+  <h1>Scores</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Accueil</a>
 </div>
 
 <div role="main" class="ui-content">
-    <h2>Next Page</h2>
-  <p>content</p>
+  <p>Pseudo</p>
 </div>
 </div>
 
 <div data-role="page" id="settings">
 <div data-role="header" data-position="fixed">
-  <h1>Settings</h1><a href="#home" data-transition="slideup" data-direction="reverse" data-icon="check" class="ui-btn-right">Done</a>
+  <h1>Paramètres</h1><a href="#home" data-transition="slideup" data-direction="reverse" data-icon="check" class="ui-btn-right">Sauvegarder</a>
 </div>
 
 <div role="main" class="ui-content">
-  <h2>Settings</h2>
+  <div class="ui-grid-a center-wrapper">
+      <div class="ui-block-a">
+        <label for="flip-1">Musiques</label>
+        <select name="flip-1" id="flip-1" data-role="slider">
+      	  <option value="false">Non</option>
+      	  <option value="true" selected="selected">Oui</option>
+        </select>
+      </div>
+
+      <div class="ui-block-b center-wrapper">
+        <label for="flip-1">Effets sonores</label>
+        <select name="flip-1" id="flip-1" data-role="slider">
+      	  <option value="false">Non</option>
+      	  <option value="true" selected="selected">Oui</option>
+        </select>
+      </div>
+    </div>
 </div>
+
 </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
