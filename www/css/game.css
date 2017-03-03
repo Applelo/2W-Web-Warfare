@@ -6,4 +6,6 @@
   height: 250px;
   background: red;
 }
-#draggable { width: 150px; height: 150px; padding: 0.5em; }
+#draggable { width: 70px; height: 130px; padding: 0.5em; }
+#draggable2 { width: 70px; height: 130px; padding: 0.5em; }
+#draggable3 { width: 70px; height: 130px; padding: 0.5em; }
