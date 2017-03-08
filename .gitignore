@@ -3,6 +3,6 @@
 
 
 # android
-platforms/android/
+/platforms/android/
 # res
 resources/signing
