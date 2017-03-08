@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="/Users/Applelo/Documents/Git/2W-Web-Warfare/platforms/android/CordovaLib/assets"/><source path="/Users/Applelo/Documents/Git/2W-Web-Warfare/platforms/android/CordovaLib/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/Applelo/Documents/Git/2W-Web-Warfare/platforms/android/CordovaLib/src/debug/assets"/></dataSet></merger>
+=======
+<merger version="3"><dataSet config="main"><source path="D:\Users\SarTox\Documents\GitHub\2W-Web-Warfare\platforms\android\CordovaLib\assets"/><source path="D:\Users\SarTox\Documents\GitHub\2W-Web-Warfare\platforms\android\CordovaLib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\Users\SarTox\Documents\GitHub\2W-Web-Warfare\platforms\android\CordovaLib\src\debug\assets"/></dataSet></merger>
+>>>>>>> origin/master
