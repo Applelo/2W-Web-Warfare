@@ -1,8 +1,2 @@
-# Mac
-.DS_Store
-
-
 # android
-/platforms/android/
-# res
-resources/signing
+/platforms/android
