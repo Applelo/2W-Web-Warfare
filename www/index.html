@@ -51,7 +51,7 @@
 </div>
 
 <div role="main" class="ui-content" id="home-content">
-    <p><a href="game.html" class="ui-btn">Jouer</a></p>
+    <p><a href="game.html" class="ui-btn" rel="external">Jouer</a></p>
     <p><a href="#scores" class="ui-btn">Scores</a></p>
     <p><a href="#credits" class="ui-btn">Crédits</a></p>
 
@@ -124,24 +124,12 @@
 </div>
 
 </div>
-<script>
-if (typeof (Storage) !== "undefined") {
-
-var person = {
-"firstName": "Shravan Kumar",
-"lastName": "Kasagoni",
-"age": "25",
-"mobileNumber": "1234567890"
-};
-
-localStorage.setItem('person', person);
-}
-else {
-alert("Sorry, your browser does not support web storage...");
-}
-</script>
+<audio loop autoplay>
+  <source src="m&s/music/test.mp3" type="audio/mp3">
+</audio>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/sound.js"></script>
     </body>
 </html>

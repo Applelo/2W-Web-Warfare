@@ -9,8 +9,8 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-media": {
+			},s
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },

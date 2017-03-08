@@ -1,0 +1,11 @@
+#plateau{
+  height: 400px;
+  background: blue;
+}
+#carte{
+  height: 250px;
+  background: red;
+}
+#draggable { width: 70px; height: 130px; padding: 0.5em; }
+#draggable2 { width: 70px; height: 130px; padding: 0.5em; }
+#draggable3 { width: 70px; height: 130px; padding: 0.5em; }
