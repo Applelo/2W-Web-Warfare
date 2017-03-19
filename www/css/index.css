@@ -16,7 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ @font-face {
+     font-family: 'optibelwe-mediumregular';
+     src: url('optibelwe-medium-webfont.woff2') format('woff2'),
+          url('optibelwe-medium-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
 * {
+  font-family: 'optibelwe-mediumregular';
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 

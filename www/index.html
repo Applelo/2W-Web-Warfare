@@ -35,11 +35,11 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+        <link rel="stylesheet" href="lib/jquery-mobile/css/hearthstone.min.css" />
 
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
-        <script type="text/javascript" src="lib/hammer/hammer.min.js"></script>
         <title>2W: Web Warfare</title>
 
     </head>
@@ -52,9 +52,9 @@
 
 <div role="main" class="ui-content" id="home-content">
     <p><a href="game.html" class="ui-btn" rel="external">Jouer</a></p>
-    <p><a href="#scores" class="ui-btn">Scores</a></p>
+    <p><a href="#scores" id="refresh_score" class="ui-btn">Scores</a></p>
     <p><a href="#credits" class="ui-btn">Crédits</a></p>
-
+    <p><a href="#" id="exit_app" class="ui-btn">Quitter</a></p>
 </div>
 </div>
 
@@ -63,25 +63,8 @@
   <h1>Scores</h1><a href="#home" data-transition="slide" data-direction="reverse" data-icon="arrow-l" class="ui-btn-left">Accueil</a>
 </div>
 
-<div role="main" class="ui-content">
-  <table data-role="table" class="ui-responsive">
-      <thead>
-        <tr>
-          <th>Pseudo</th>
-          <th>Scores</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Loïs</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Quantin</td>
-          <td>1209</td>
-        </tr>
-      </tbody>
-  </table>
+<div role="main" class="ui-content" id="scores_result">
+
 </div>
 </div>
 
@@ -106,30 +89,30 @@
 <div role="main" class="ui-content">
   <div class="ui-grid-a center-wrapper">
       <div class="ui-block-a">
-        <label for="flip-1">Musiques</label>
-        <select name="flip-1" id="flip-1" data-role="slider">
+        <label for="flip-music">Musiques</label>
+        <select id="flip-music" data-role="slider">
       	  <option value="false">Non</option>
-      	  <option value="true" selected="selected">Oui</option>
+      	  <option value="true">Oui</option>
         </select>
       </div>
 
       <div class="ui-block-b center-wrapper">
-        <label for="flip-1">Effets sonores</label>
-        <select name="flip-1" id="flip-1" data-role="slider">
+        <label for="flip-sound">Effets sonores</label>
+        <select id="flip-sound" data-role="slider">
       	  <option value="false">Non</option>
-      	  <option value="true" selected="selected">Oui</option>
+      	  <option value="true">Oui</option>
         </select>
       </div>
     </div>
 </div>
 
 </div>
-<audio loop autoplay>
-  <source src="m&s/music/test.mp3" type="audio/mp3">
-</audio>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/sound.js"></script>
+        <script type="text/javascript" src="js/score.js"></script>
+        <script type="text/javascript" src="js/extra.js"></script>
     </body>
 </html>
