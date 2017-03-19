@@ -18,8 +18,9 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -28,16 +29,16 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-        <link rel="stylesheet" href="lib/jquery-ui/css/jquery-ui.min.css" />
-        <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/game.css">
+    <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/game.css">
 
 
+<<<<<<< HEAD
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
       	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
@@ -48,21 +49,27 @@
     <body>
       <body>
         <div id="droppable" class="ui-widget-header">
+=======
+    <script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+    <script type="text/javascript" src="lib/interact/js/interact.js"></script>
+    <title>2W: Web Warfare</title>
+</head>
 
+<body>
+>>>>>>> origin/master
+
+    <body>
+        <div id="outer-dropzone" class="dropzone">
+            #outer-dropzone
         </div>
-        <div id="carte" >
-          <div id="draggable" class="ui-widget-content">
-            <p>Css</p>
-          </div>
-          <div id="draggable2" class="ui-widget-content">
-            <p>Html</p>
-          </div>
-          <div id="draggable3" class="ui-widget-content">
-            <p>Javascript</p>
-          </div>
+        <div id="drag-1" class="draggable drag-drop">
+            <p> Css </p>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="lib/fastclick/js/fastclick.js"></script>
+
         <script type="text/javascript" src="js/game.js"></script>
     </body>
+
 </html>
