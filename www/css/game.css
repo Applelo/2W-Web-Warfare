@@ -1,5 +1,5 @@
 #drag-1, #drag-2 {
-  width: 10%;
+  width: 15%;
   height: 100%;
   min-height: 3em;
   margin-top: 2%;
@@ -25,7 +25,7 @@
   background-color: #ccc;
   border: dashed 4px transparent;
   border-radius: 4px;
-  width: 80%;
+  width: 50%;
   overflow: scroll;
   transition: background-color 0.3s;
 }
