@@ -2,7 +2,6 @@ function set_score() {
   refresh_score($.jStorage.get("scores",null));
 }
 
-
 function refresh_score(scores) {
   var result = "";
   if (scores === null)
@@ -22,8 +21,10 @@ document.getElementById("refresh_score").onclick = function(){
 };
 
 function add_score(pseudo, score) {
-  if ($.jStorage.get("scores") == null)
+  if ($.jStorage.get("scores") == null) {
+    $(".remove-score-button").css("display","block");
     $.jStorage.set('scores',[{"pseudo": pseudo, "score": score}]);
+  }
   else {
     var temp = $.jStorage.get("scores");
     temp = JSON.stringify(temp);
@@ -40,3 +41,6 @@ $("#remove-score").click(function() {
     $.jStorage.deleteKey("scores");
   }
 });
+
+if ($.jStorage.get("scores",null) == null)
+  $(".remove-score-button").css("display","none");
