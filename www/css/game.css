@@ -26,5 +26,6 @@
   border: dashed 4px transparent;
   border-radius: 4px;
   width: 80%;
+  overflow: scroll;
   transition: background-color 0.3s;
 }
