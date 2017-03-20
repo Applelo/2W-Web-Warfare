@@ -21,6 +21,10 @@
         <icon src="www/img/logo.png" />
         <splash src="www/img/logo.png" density="land-hdpi"/>
         <preference name="Fullscreen" value="true" />
+        <splash src="res/HDPIpa.png" density="land-hdpi"/>
+        <splash src="res/LDPIpa.png" density="land-ldpi"/>
+        <splash src="res/HDPIpo.png" density="port-hdpi"/>
+        <splash src="res/LDPIpo.png" density="port-ldpi"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

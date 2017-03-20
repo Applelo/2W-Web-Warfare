@@ -12,6 +12,9 @@
         },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "2w_web_warfare"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.com"
         }
     },
     "dependent_plugins": {
