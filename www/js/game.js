@@ -1,5 +1,3 @@
-function loop(){
-
 // target elements with the "draggable" class
 interact('.draggable')
     .draggable({
@@ -41,52 +39,16 @@ function dragMoveListener(event) {
     target.setAttribute('data-y', y);
 }
 
-function nameClick() {
-    var nameDrag = this.id;
-    console.log(nameDrag);
-    return nameDrag;
-}
-
-var inputs = document.getElementsByTagName("img");
-for (var i = 0; i < inputs.length; i++) {
-    var nameTag = inputs[i].addEventListener("click", nameClick);
-}
-
-nameDrag = nameClick();
-
-console.log(nameDrag);
-if(nameDrag == "drag-1"){
-//DROPZONE
 interact('.dropzone').dropzone({
-
-    // only accept elements matching this CSS selector
-    accept: '#' + nameDrag + '',
 
     // Require a 75% element overlap for a drop to be possible
     overlap: 0.75,
-
-
     ondrop: function(event) {
+      var getCard = event.relatedTarget.getAttribute("card");
+        if (getCard == 1)
           document.getElementById("outer-dropzone").style.backgroundColor = "red";
+        else if (getCard == 2)
+          document.getElementById("outer-dropzone").style.backgroundColor = "yellow";
       },
 
 });
-}
-else if (nameDrag == "drag-2") {
-  interact('.dropzone').dropzone({
-
-      // only accept elements matching this CSS selector
-      accept: '#' + nameDrag + '',
-
-      // Require a 75% element overlap for a drop to be possible
-      overlap: 0.75,
-
-      ondrop: function(event) {
-            document.getElementById("outer-dropzone").innerHTML = "<p> qsdlmkfn qsidyfgiuyqs dbfnsqokjhbijknbgiuoqh ghhdfug </p>";
-        },
-
-  });
-}
-setInterval(loop,10000);
-}
-loop();
