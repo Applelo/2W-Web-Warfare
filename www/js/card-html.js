@@ -25,7 +25,7 @@ function HTMLh1() {
 
 /*img : ajoute une image de petit chat trop mignon*/
 function HTMLimg() {
-  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<img src='img/Chats/" + aleatoire(5) + ".png'>";
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<img src='img/Chat/" + aleatoire(5) + ".jpg'>";
 }
 
 /*nav : ajoute une nav*/
