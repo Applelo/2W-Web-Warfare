@@ -1,3 +1,5 @@
+var score = 0;
+
 // target elements with the "draggable" class
 interact('.draggable')
     .draggable({
@@ -46,9 +48,10 @@ interact('.dropzone').dropzone({
     ondrop: function(event) {
       var getCard = event.relatedTarget.getAttribute("card");
         if (getCard == 1)
-          document.getElementById("outer-dropzone").style.backgroundColor = "red";
+          CSSbackground();
         else if (getCard == 2)
-          document.getElementById("outer-dropzone").style.backgroundColor = "yellow";
+          HTMLp();
+          event.relatedTarget.outerHTML="";//Remove card
       },
 
 });
