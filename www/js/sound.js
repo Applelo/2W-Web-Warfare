@@ -1,11 +1,6 @@
 var sounds = [];
 var musics = [];
 
-function aleatoire(N) {
-  return (Math.floor((N)*Math.random()+1));
-}
-
-
 function create_sound(src, type, loop) {
   if (type == "sound") {
     sounds.push(document.createElement("audio"));
@@ -46,63 +41,10 @@ function volume_sounds(type, volume) {
 
 function set_volume_setting() {
 
-    if(localStorage.getItem("paramMusic") === null && localStorage.getItem("paramSound") === null) {
+    if (localStorage.getItem("paramMusic") === null && localStorage.getItem("paramSound") === null) {
       localStorage.paramMusic = 1;
       localStorage.paramSound = 1;
     }
     volume_sounds("sound",localStorage.paramSound);
     volume_sounds("music",localStorage.paramMusic);
-
 }
-
-if (localStorage.paramMusic == 1)
-  $("#flip-music option[value='true']").attr("selected","'selected'");
-else
-  $("#flip-music option[value='false']").attr("selected","'selected'");
-if (localStorage.paramSound == 1)
-  $("#flip-sound option[value='true']").attr("selected","'selected'");
-else
-  $("#flip-sound option[value='false']").attr("selected","'selected'");
-
-
-$( "#flip-music" ).change(function() {
-  if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/click.mp3", "sound", false);
-  volume_sounds("music", localStorage.paramMusic);
-  if ($(this).val() == "false")
-    localStorage.paramMusic = 0;
-  else
-    localStorage.paramMusic = 1;
-  set_volume_setting();
-});
-
-$( "#flip-sound" ).change(function() {
-  volume_sounds("sound", localStorage.paramSound);
-  if ($(this).val() == "false")
-    localStorage.paramSound = 0;
-  else
-    localStorage.paramSound = 1;
-  set_volume_setting();
-  if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/click.mp3", "sound", false);
-});
-
-create_sound("m&s/music/2-01 Pull up a Chair.mp3", "music", true);
-create_sound("m&s/sound/intro/" + aleatoire(3) + ".mp3", "sound", false);
-
-$('[type="button"], .ui-btn-left, ui-btn-right, .ui-btn, a').mouseenter(function(event) {
-  if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/select.mp3", "sound", false);
-});
-
-$('.ui-btn').click(function() {
-    if (localStorage.paramSound == 1)
-      create_sound("m&s/sound/button/open.mp3", "sound", false);
-});
-
-$('.ui-btn-right, .ui-btn-left').click(function() {
-    if (localStorage.paramSound == 1)
-      create_sound("m&s/sound/button/click.mp3", "sound", false);
-});
-
-set_volume_setting();

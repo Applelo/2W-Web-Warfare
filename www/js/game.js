@@ -1,4 +1,5 @@
 var score = 0;
+var choose_music = {1:"2-02 Tricks of the Trade", 2:"2-03 Two Rogues, One Mark", 3:"2-05 Playing with a Full Deck", 4:"2-06 Awash in Ale, but Nary a Mug", 5:"2-08 Tabletop Battles"};
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -53,5 +54,7 @@ interact('.dropzone').dropzone({
           HTMLp();
           event.relatedTarget.outerHTML="";//Remove card
       },
-
 });
+
+create_sound("m&s/music/" + choose_music[aleatoire(5)-1] + ".mp3", "music", true);
+set_volume_setting();
