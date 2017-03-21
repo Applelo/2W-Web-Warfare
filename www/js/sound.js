@@ -1,41 +1,38 @@
-var sounds = [];
-var musics = [];
+var sounds = {};
+var musics = {};
 
-function create_sound(src, type, loop) {
+function create_sound(name, src, type, loop) {
   if (type == "sound") {
-    sounds.push(document.createElement("audio"));
-    var length = sounds.length - 1;
-    if (loop == true) {
-        sounds[length].addEventListener("ended", function () {
-        // Wait 500 milliseconds before next loop
-        setTimeout(function () {   sounds[length].play(); }, 500);
-      }, false);
-    }
-    sounds[length].src = src;
-    sounds[length].play();
+    var sound = new Howl({
+      src: [src],
+      loop: loop
+    });
+    sounds[name] = sound;
+    //console.log(sounds);
   }
   else if (type == "music") {
-    musics.push(document.createElement("audio"));
-    var length = musics.length - 1;
-    if (loop == true) {
-        musics[length].addEventListener("ended", function () {
-        // Wait 500 milliseconds before next loop
-        setTimeout(function () {   musics[length].play(); }, 500);
-      }, false);
-    }
-    musics[length].src = src;
-    musics[length].play();
+    var music = new Howl({
+      src: [src],
+      loop: loop
+    });
+    musics[name] = music;
   }
 }
 
 function volume_sounds(type, volume) {
   if (type == "sound") {
-    for(var i=0; i<sounds.length; i++)
-      sounds[i].volume = volume;
+    for (var property in sounds) {
+      if (sounds.hasOwnProperty(property)) {
+        sounds[property].volume(volume);
+      }
+    }
   }
   else if (type == "music") {
-    for(var j=0; j<musics.length; j++)
-      musics[j].volume = volume;
+    for (var property in musics) {
+      if (musics.hasOwnProperty(property)) {
+        musics[property].volume(volume);
+      }
+    }
   }
 }
 

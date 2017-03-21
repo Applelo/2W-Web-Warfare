@@ -1,4 +1,17 @@
-//Music parameters
+//Sounds
+create_sound("Click","m&s/sound/button/click.mp3", "sound", false);
+create_sound("Select", "m&s/sound/button/select.mp3", "sound", false);
+create_sound("Open", "m&s/sound/button/select.mp3", "sound", false);
+create_sound("Intro","m&s/sound/intro/" + aleatoire(3) + ".mp3", "sound", false);
+
+//Musics
+create_sound("MainTitle","m&s/music/Main_Title.mp3", "music", false);
+create_sound("MainTitleNoise","m&s/music/Main_Title_Noise.mp3", "music", true);
+
+//Plays Music
+musics["MainTitle"].play();
+musics["MainTitleNoise"].play();
+
 
 if (localStorage.paramMusic == 1)
   $("#flip-music option[value='true']").attr("selected","'selected'");
@@ -12,7 +25,7 @@ else
 
 $( "#flip-music" ).change(function() {
   if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/click.mp3", "sound", false);
+    sounds["Click"].play();
   volume_sounds("music", localStorage.paramMusic);
   if ($(this).val() == "false")
     localStorage.paramMusic = 0;
@@ -29,32 +42,29 @@ $( "#flip-sound" ).change(function() {
     localStorage.paramSound = 1;
   set_volume_setting();
   if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/click.mp3", "sound", false);
+    sounds["Click"].play();
 });
 
 
-create_sound("m&s/music/Main_Title.mp3", "music", false);
-create_sound("m&s/music/Main_Title_Noise.mp3", "music", true);
-
 if (localStorage.paramIntro != 1) {
-  create_sound("m&s/sound/intro/" + aleatoire(3) + ".mp3", "sound", false);
   localStorage.paramIntro = 1;
+  sounds["Intro"].play();
 }
 
 
 $('[type="button"], .ui-btn-left, ui-btn-right, .ui-btn, a').mouseenter(function(event) {
   if (localStorage.paramSound == 1)
-    create_sound("m&s/sound/button/select.mp3", "sound", false);
+    sounds["Select"].play();
 });
 
 $('.ui-btn').click(function() {
     if (localStorage.paramSound == 1)
-      create_sound("m&s/sound/button/open.mp3", "sound", false);
+      sounds["Open"].play();
 });
 
 $('.ui-btn-right, .ui-btn-left').click(function() {
     if (localStorage.paramSound == 1)
-      create_sound("m&s/sound/button/click.mp3", "sound", false);
+      sounds["Click"].play();
 });
 
 set_volume_setting();
