@@ -33,7 +33,8 @@ $( "#flip-sound" ).change(function() {
 });
 
 
-create_sound("m&s/music/2-01 Pull up a Chair.mp3", "music", true);
+create_sound("m&s/music/Main_Title.mp3", "music", false);
+create_sound("m&s/music/Main_Title_Noise.mp3", "music", true);
 
 if (localStorage.paramIntro != 1) {
   create_sound("m&s/sound/intro/" + aleatoire(3) + ".mp3", "sound", false);
