@@ -1,8 +1,17 @@
 var score = 0;
-var choose_music = {1:"Bad Reputation", 2:"Duel", 3:"Better Hand", 4:"Don't Let Your Guard Down", 5:"On a Roll"};
+var choose_music = ["Bad Reputation", "Duel", "Better Hand", "Don't Let Your Guard Down", "On a Roll"];
+var the_music = aleatoire(5);
 var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
 var img_epic = ["CSSposition", "CSSdisplay", "HTMLform", "HTMLnav", "HTMLtableau"];
 var img_basic = ["CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLbarre", "HTMLbr", "HTMLdiv", "HTMLform", "HTMLh1", "HTMLimg", "HTMLnav", "HTMLp", "HTMLsup", "HTMLtableau"];
+
+create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
+musics["the_music"].play();
+
+musics["the_music"].on('end', function(){
+  the_music = aleatoire(5);
+  create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
+});
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -77,5 +86,4 @@ function mise() {
   element.innerHTML = element.innerHTML + "<img src='img/Carte/carte" + test + ".png'>";
 }
 
-create_sound("m&s/music/" + choose_music[aleatoire(5)] + ".mp3", "music", true);
 set_volume_setting();
