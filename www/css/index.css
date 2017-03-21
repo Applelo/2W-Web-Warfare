@@ -134,3 +134,8 @@ h1 img {
   width:8%;
   margin:0;
 }
+
+#credits {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
