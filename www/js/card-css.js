@@ -5,7 +5,7 @@ function CSSbackground() {
 
 /*text-align : aligne le texte à droite*/
 function CSStextalign() {
-  document.getElementById("outer-dropzone").style
+  document.getElementById("outer-dropzone").style.textAlign = "right";
 }
 
 /*color : change la couleur des éléments en rouge*/
@@ -15,20 +15,20 @@ function CSScolor() {
 
 /*text-decoration : souligne le texte*/
 function CSStext_decoration() {
-  document.getElementById("outer-dropzone").
+  document.getElementById("outer-dropzone").style.textDecoration = "underline";
 }
 
 /*display : change l'affichage des éléments*/
 function CSSdisplay() {
-  document.getElementById("outer-dropzone").
+  document.getElementById("outer-dropzone").style.display = "inline-block";
 }
 
 /*font-family : change la font */
 function CSSfont() {
-  document.getElementById("outer-dropzone").
+  document.getElementById("outer-dropzone").style.fontFamily = "arial";
 }
 
 /*position : change la position d'un élément */
 function CSSposition() {
-  document.getElementById("outer-dropzone").
+  document.getElementById("outer-dropzone").style.position = "absolute";
 }

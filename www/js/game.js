@@ -54,6 +54,20 @@ interact('.dropzone').dropzone({
           CSSbackground();
         else if (getCard == 2)
           HTMLp();
+          else if (getCard == 3)
+            CSScolor();
+          else if (getCard == 4)
+            CSStext_decoration();
+            else if (getCard == 5)
+              CSSdisplay();
+              else if (getCard == 6)
+                HTMLnav();
+                else if (getCard == 7)
+                  CSSfont();
+                else if (getCard == 8)
+                  HTMLhr()
+                  else if (getCard == 9)
+                    HTMLh1();
           event.relatedTarget.outerHTML= "";//Remove card
       },
 });
