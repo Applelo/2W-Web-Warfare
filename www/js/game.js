@@ -1,5 +1,8 @@
 var score = 0;
 var choose_music = {1:"2-02 Tricks of the Trade", 2:"2-03 Two Rogues, One Mark", 3:"2-05 Playing with a Full Deck", 4:"2-06 Awash in Ale, but Nary a Mug", 5:"2-08 Tabletop Battles"};
+var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
+var img_epic = ["CSSposition", "CSSdisplay", "HTMLform", "HTMLnav", "HTMLtableau"];
+var img_basic = ["CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLbarre", "HTMLbr", "HTMLdiv", "HTMLform", "HTMLh1", "HTMLimg", "HTMLnav", "HTMLp", "HTMLsup", "HTMLtableau"];
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -17,8 +20,7 @@ interact('.draggable')
                 right: 1
             }
         },
-        // enable autoScroll
-        autoScroll: true,
+        max: 1,
 
         // call this function on every dragmove event
         onmove: dragMoveListener,
@@ -52,9 +54,14 @@ interact('.dropzone').dropzone({
           CSSbackground();
         else if (getCard == 2)
           HTMLp();
-          event.relatedTarget.outerHTML="";//Remove card
+          event.relatedTarget.outerHTML= "";//Remove card
       },
 });
+
+function mise() {
+  element = document.getElementById("cards");
+  element.innerHTML = element.innerHTML + "<img src='img/Carte/carte" + test + ".png'>";
+}
 
 create_sound("m&s/music/" + choose_music[aleatoire(5)-1] + ".mp3", "music", true);
 set_volume_setting();

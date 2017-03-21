@@ -129,3 +129,8 @@ h1 {
 .center-wrapper * {
   margin: 0 auto;
 }
+
+h1 img {
+  width:8%;
+  margin:0;
+}
