@@ -65,9 +65,9 @@ function HTMLtable(){
   return score += 2;
 }
 
-/* map : insère une map */
+/* video : insère une video */
 function HTMLvideo(){
-  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + '<video width="320" height="240" autoplay><source src="video/vache.mp4" type="video/mp4"></video>';
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + '<video width="320" height="240" autoplay muted><source src="video/vache.mp4" type="video/mp4"></video>';
   return score += 2;
 }
 

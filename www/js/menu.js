@@ -2,7 +2,7 @@
 create_sound("Click","m&s/sound/button/click.mp3", "sound", false);
 create_sound("Select", "m&s/sound/button/select.mp3", "sound", false);
 create_sound("Open", "m&s/sound/button/select.mp3", "sound", false);
-create_sound("Intro","m&s/sound/intro/" + aleatoire(3) + ".mp3", "sound", false);
+create_sound("Intro","m&s/sound/intro/" + aleatoire(4) + ".mp3", "sound", false);
 
 //Musics
 create_sound("MainTitle","m&s/music/Main_Title.mp3", "music", false);

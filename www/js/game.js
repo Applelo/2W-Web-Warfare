@@ -25,6 +25,8 @@ create_sound("play_card_from_hand_2","m&s/sound/card/play_card_from_hand_2.mp3",
 create_sound("play_card_from_hand_3","m&s/sound/card/play_card_from_hand_3.mp3", "sound", false);
 create_sound("card_mouse_away","m&s/sound/card/card_mouse_away.mp3", "sound", false);
 create_sound("card_mouse_over","m&s/sound/card/card_mouse_over.mp3", "sound", false);
+create_sound("start_voice","m&s/sound/add_voice/Que la partie commence.mp3", "sound", false);
+create_sound("end_voice","m&s/sound/card/Fin de la partie.mp3", "sound", false);
 mise();
 
 // target elements with the "draggable" class
