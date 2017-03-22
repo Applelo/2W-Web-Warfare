@@ -1,10 +1,12 @@
 var score = 0;
+var cpt = 0;
 var choose_music = ["Bad Reputation", "Duel", "Better Hand", "Don't Let Your Guard Down", "On a Roll"];
 var the_music = aleatoire(5) - 1;
 var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
 var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau","HTMLvideo"];
 var img_basic = ["CSStext_decoration","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup"];
 var nbr_cards = 24;
+var translate = {};
 
 create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
 musics["the_music"].play();
@@ -46,6 +48,17 @@ interact('.draggable')
 
     });
 
+interact('.draggable').on('dragend', dragLeaveListener);
+
+function dragLeaveListener(event) {
+  var target = event.target;
+
+  // update the posiion attributes
+  target.setAttribute('data-x', 0);
+  target.setAttribute('data-y', 0);
+
+}
+
 function dragMoveListener(event) {
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
@@ -55,12 +68,23 @@ function dragMoveListener(event) {
     target.style.webkitTransform =
         target.style.transform =
         'translate(' + x + 'px, ' + y + 'px)';
+        event.target.style.height="120%";
+    $(document).mouseup(function(){
+      event.target.style.webkitTransform =
+  event.target.style.transform =
+      'translate(' + 0 + 'px, ' + 0 + 'px)';
+      event.target.style.height="90%";
+    });
 
     // update the posiion attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
 }
-var cpt = 0;
+
+// $('.draggable').mouseup(function(){
+//   target.setAttribute('data-x', 0);
+//   target.setAttribute('data-y', 0);
+// });
 
 interact('.dropzone').dropzone({
     // Require a 75% element overlap for a drop to be possible
