@@ -5,19 +5,22 @@ var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
 var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau"];
 var img_basic = ["CSStext_decoration","HTMLvideo","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLform", "HTMLh1", "HTMLimg", "HTMLnav", "HTMLp", "HTMLsup", "HTMLtableau"];
 
+
 create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
 musics["the_music"].play();
 
 musics["the_music"].on('end', function(){
   the_music = aleatoire(5) - 1;
   create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
+  musics["the_music"].play();
 });
-startGame()
-function startGame(){
-  document.getElementById("cards").innerHTML = "<button id='pioche'>Pioche</button>  ";
-  document.getElementById("pioche").addEventListener("click", pioche);
-}
 
+create_sound("play_card_from_hand_1","m&s/sound/card/play_card_from_hand_1.mp3", "sound", false);
+create_sound("play_card_from_hand_2","m&s/sound/card/play_card_from_hand_2.mp3", "sound", false);
+create_sound("play_card_from_hand_3","m&s/sound/card/play_card_from_hand_3.mp3", "sound", false);
+create_sound("card_mouse_away","m&s/sound/card/card_mouse_away.mp3", "sound", false);
+create_sound("card_mouse_over","m&s/sound/card/card_mouse_over.mp3", "sound", false);
+pioche();
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -38,7 +41,7 @@ interact('.draggable')
         max: 1,
 
         // call this function on every dragmove event
-        onmove: dragMoveListener,
+        onmove: dragMoveListener
         // call this function on every dragend event
 
     });
@@ -48,7 +51,6 @@ function dragMoveListener(event) {
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
         y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-    target.style.height = "120%";
     // translate the element
     target.style.webkitTransform =
         target.style.transform =
@@ -105,7 +107,7 @@ interact('.dropzone').dropzone({
           cpt++;
           event.relatedTarget.outerHTML= "";//Remove card
         if(cpt >= 6){
-          document.getElementById("cards").innerHTML = "<button id='pioche'>Pioche</button>  ";
+          document.getElementById("cards").innerHTML = "<button id='pioche'>Pioche</button>";
           document.getElementById("pioche").addEventListener("click", pioche);
         }
       },
@@ -116,7 +118,9 @@ function pioche(){
     var card = img_basic[Math.floor(Math.random()*img_basic.length)];
     document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
   }
+  sounds["play_card_from_hand_" + aleatoire(3)].play();
   cpt = 0;
+  document.getElementById("pioche").outerHTML= "";
 }
 
 

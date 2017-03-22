@@ -16,7 +16,7 @@ function HTMLbr() {
 
 /*div : ajoute une div*/
 function HTMLdiv() {
-  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<div>RANDOM</div>";
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<div>Div</div>";
 }
 
 /*form : ajoute un formulaire de contact*/
