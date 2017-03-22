@@ -5,11 +5,13 @@ var pseudo = "";
 var sameCard = 0;
 var choose_music = ["Bad Reputation", "Duel", "Better Hand", "Don't Let Your Guard Down", "On a Roll"];
 var the_music = aleatoire(5) - 1;
-var img_legendaire = ["LegendaireBits", "HTMLsvg"];
+var img_legendaire = ["LegendaireBits", "LegendaireSvg", "LegendaireColor"];
 var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau","HTMLvideo"];
-var img_basic = ["HTMLcode","CSStext_decoration","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup"];
+var img_basic = ["HTMLcode","HTMLprogress", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup",
+"CSSalign", "CSStext_decoration", "CSSback", "CSScolor", "CSSfont"];
 var nbr_cards = 24;
 var translate = {};
+var previous_card= "";
 
 create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
 musics["the_music"].play();
@@ -26,7 +28,7 @@ create_sound("play_card_from_hand_3","m&s/sound/card/play_card_from_hand_3.mp3",
 create_sound("card_mouse_away","m&s/sound/card/card_mouse_away.mp3", "sound", false);
 create_sound("card_mouse_over","m&s/sound/card/card_mouse_over.mp3", "sound", false);
 create_sound("start_voice","m&s/sound/add_voice/Que la partie commence.mp3", "sound", false);
-create_sound("end_voice","m&s/sound/card/Fin de la partie.mp3", "sound", false);
+create_sound("end_voice","m&s/sound/add_voice/Fin de la partie.mp3", "sound", false);
 mise();
 
 // target elements with the "draggable" class
@@ -98,95 +100,94 @@ interact('.dropzone').dropzone({
       var getCard = event.relatedTarget.getAttribute("card");
         if (getCard == "CSSback"){
           CSSbackground();
-          partieFin++;
         }
         else if (getCard == "HTMLp"){
-          HTMLp();
-          partieFin++;
+          score_f = HTMLp();
         }
         else if (getCard == "HTMLprogress"){
-          HTMLprogress();
-          partieFin++;
+          score_f  = HTMLprogress();
         }
         else if (getCard == "CSStext_decoration"){
-          CSStext_decoration();
-          partieFin++;
+          score_f  = CSStext_decoration();
         }
         else if (getCard == "CSSfont"){
-          CSSfont();
-          partieFin++;
+          score_f  =CSSfont();
         }
         else if (getCard == "HTMLvideo"){
-          HTMLvideo();
-          partieFin++;
+          score_f  =HTMLvideo();
         }
         else if (getCard == "CSSalign"){
-          CSStextalign();
-          partieFin++;
+          score_f =CSStextalign();
         }
         else if (getCard == "CSScolor"){
-          CSScolor();
-          partieFin++;
+          score_f =CSScolor();
         }
         else if (getCard == "HTMLa"){
-          HTMLa();
-          partieFin++;
+          score_f =HTMLa();
         }
         else if (getCard == "HTMLhr"){
-          HTMLhr();
-          partieFin++;
+          score_f = HTMLhr();
         }
         else if (getCard == "HTMLbr"){
-          HTMLbr();
-          partieFin++;
+          score_f = HTMLbr();
         }
         else if (getCard == "HTMLdiv"){
-          HTMLdiv();
-          partieFin++;
+          score_f  =HTMLdiv();
         }
         else if (getCard == "HTMLform"){
-          HTMLform();
-          partieFin++;
+        score_f =  HTMLform();
         }
         else if (getCard == "HTMLh1"){
-          HTMLh1();
-          partieFin++;
+          score_f =HTMLh1();
         }
         else if (getCard == "HTMLimg"){
-          HTMLimg();
-          partieFin++;
+          score_f = HTMLimg();
         }
         else if (getCard == "HTMLnav"){
-          HTMLnav();
-          partieFin++;
+          score_f = HTMLnav();
         }
         else if (getCard == "HTMLsup"){
-          HTMLsup();
-          partieFin++;
+          score_f = HTMLsup();
         }
         else if (getCard == "HTMLtableau"){
-          HTMLtable();
-          partieFin++;
+          score_f  =HTMLtable();
         }
-        else if (getCard == "HTMLsvg"){
-          HTMLsvg();
-          partieFin++;
+        else if (getCard == "LegendaireSvg"){
+          score_f = LegendaireSvg();
         }
         else if (getCard == "HTMLcode"){
-          HTMLcode();
-          partieFin++;
+          score_f =HTMLcode();
         }
         else if (getCard == "LegendaireBits"){
-          LegendaireBits();
-          partieFin++;
+          score_f = LegendaireBits();
+        }
+        else if (getCard == "LegendaireBits"){
+          score_f = LegendaireBits();
+        }
+        else if (getCard == "LegendaireColor"){
+          score_f = LegendaireColor();
         }
         else {
           alert("doesn't exist");
         }
+        var actual_card="";
+        if (getCard.indexOf("HTML") >= 0)
+          actual_card = "HTML";
+        else if (getCard.indexOf("CSS") >= 0)
+          actual_card = "CSS";
+        else
+          actual_card = "";
 
-          if (cpt == 1) {
-                
-          }
+        if (previous_card != actual_card)
+          score = score + score_f;
+        if (getCard.indexOf("HTML") >= 0)
+          previous_card = "HTML";
+        else if (getCard.indexOf("CSS") >= 0)
+          previous_card = "CSS";
+        else
+          previous_card = "";
+
+        partieFin++;
 
 
           document.getElementById("display_score_value").innerHTML = score;
@@ -197,7 +198,10 @@ interact('.dropzone').dropzone({
           document.getElementById("pioche").addEventListener("click", pioche);
         }
         if(partieFin == 24){
-          pseudo = prompt("Vous avez fini la partie votre score est de " + score + " points, veuillez saisir une pseudo pour enregistrer votre score");
+          sounds["end_voice"].play();
+          var pseudo = prompt("Vous avez fini la partie votre score est de " + score + " points, veuillez saisir une pseudo pour enregistrer votre score");
+          add_score(pseudo, score);
+          window.location.replace('./main.html');
         }
       },
 });
@@ -229,6 +233,7 @@ function pioche(){
 
 
 function mise() {
+  sounds["start_voice"].play();
   var i = 0;
   var old_card = "";
   var card = "";
