@@ -18,17 +18,17 @@ function CSStext_decoration() {
   document.getElementById("outer-dropzone").style.textDecoration = "underline";
 }
 
-/*display : change l'affichage des éléments*/
-function CSSdisplay() {
-  document.getElementById("outer-dropzone").style.display = "inline-block";
-}
-
 /*font-family : change la font */
 function CSSfont() {
   document.getElementById("outer-dropzone").style.fontFamily = "arial";
 }
 
-/*position : change la position d'un élément */
-function CSSposition() {
-  document.getElementById("outer-dropzone").style.position = "absolute";
+/*border-style : ajoute une bordure */
+function CSSborder(){
+  document.getElementById("outer-dropzone").style.border = "dotted";
+}
+
+/*text-shadow : ajout d'une ombre */
+function CSSshadow(){
+  document.getElementById("outer-dropzone").style.textShadow = "4px";
 }
