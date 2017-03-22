@@ -8,6 +8,12 @@ function HTMLhr() {
   document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<hr/>";
 }
 
+/*br : insère un saut de ligne*/
+function HTMLbr() {
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<br>";
+}
+
+
 /*div : ajoute une div*/
 function HTMLdiv() {
   document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<div>RANDOM</div>";
