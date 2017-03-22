@@ -12,6 +12,12 @@ musics["the_music"].on('end', function(){
   the_music = aleatoire(5) - 1;
   create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
 });
+startGame()
+function startGame(){
+  document.getElementById("cards").innerHTML = "<button id='pioche'>Pioche</button>  ";
+  document.getElementById("pioche").addEventListener("click", pioche);
+}
+
 
 // target elements with the "draggable" class
 interact('.draggable')
