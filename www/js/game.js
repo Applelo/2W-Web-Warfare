@@ -1,10 +1,13 @@
 var score = 0;
 var cpt = 0;
+var partieFin = 0;
+var pseudo = "";
+var sameCard = 0;
 var choose_music = ["Bad Reputation", "Duel", "Better Hand", "Don't Let Your Guard Down", "On a Roll"];
 var the_music = aleatoire(5) - 1;
-var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
+var img_legendaire = ["LegendaireBits", "HTMLsvg"];
 var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau","HTMLvideo"];
-var img_basic = ["CSStext_decoration","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup"];
+var img_basic = ["HTMLcode","CSStext_decoration","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup"];
 var nbr_cards = 24;
 var translate = {};
 
@@ -91,50 +94,108 @@ interact('.dropzone').dropzone({
     overlap: 0.25,
     ondrop: function(event) {
       var getCard = event.relatedTarget.getAttribute("card");
-        if (getCard == "CSSback")
+        if (getCard == "CSSback"){
           CSSbackground();
-        else if (getCard == "HTMLp")
+          partieFin++;
+        }
+        else if (getCard == "HTMLp"){
           HTMLp();
-        else if (getCard == "HTMLprogress")
+          partieFin++;
+        }
+        else if (getCard == "HTMLprogress"){
           HTMLprogress();
-        else if (getCard == "CSStext_decoration")
+          partieFin++;
+        }
+        else if (getCard == "CSStext_decoration"){
           CSStext_decoration();
-        else if (getCard == "CSSfont")
+          partieFin++;
+        }
+        else if (getCard == "CSSfont"){
           CSSfont();
-        else if (getCard == "HTMLvideo")
+          partieFin++;
+        }
+        else if (getCard == "HTMLvideo"){
           HTMLvideo();
-        else if (getCard == "CSSalign")
+          partieFin++;
+        }
+        else if (getCard == "CSSalign"){
           CSStextalign();
-        else if (getCard == "CSScolor")
+          partieFin++;
+        }
+        else if (getCard == "CSScolor"){
           CSScolor();
-        else if (getCard == "HTMLa")
+          partieFin++;
+        }
+        else if (getCard == "HTMLa"){
           HTMLa();
-        else if (getCard == "HTMLhr")
+          partieFin++;
+        }
+        else if (getCard == "HTMLhr"){
           HTMLhr();
-        else if (getCard == "HTMLbr")
+          partieFin++;
+        }
+        else if (getCard == "HTMLbr"){
           HTMLbr();
-        else if (getCard == "HTMLdiv")
+          partieFin++;
+        }
+        else if (getCard == "HTMLdiv"){
           HTMLdiv();
-        else if (getCard == "HTMLform")
+          partieFin++;
+        }
+        else if (getCard == "HTMLform"){
           HTMLform();
-        else if (getCard == "HTMLh1")
+          partieFin++;
+        }
+        else if (getCard == "HTMLh1"){
           HTMLh1();
-        else if (getCard == "HTMLimg")
+          partieFin++;
+        }
+        else if (getCard == "HTMLimg"){
           HTMLimg();
-        else if (getCard == "HTMLnav")
+          partieFin++;
+        }
+        else if (getCard == "HTMLnav"){
           HTMLnav();
-        else if (getCard == "HTMLsup")
+          partieFin++;
+        }
+        else if (getCard == "HTMLsup"){
           HTMLsup();
-        else if (getCard == "HTMLtableau")
+          partieFin++;
+        }
+        else if (getCard == "HTMLtableau"){
           HTMLtable();
-        else
+          partieFin++;
+        }
+        else if (getCard == "HTMLsvg"){
+          HTMLsvg();
+          partieFin++;
+        }
+        else if (getCard == "HTMLcode"){
+          HTMLcode();
+          partieFin++;
+        }
+        else if (getCard == "LegendaireBits"){
+          LegendaireBits();
+          partieFin++;
+        }
+        else {
           alert("doesn't exist");
+        }
 
+          if (cpt == 1) {
+                
+          }
+
+
+          document.getElementById("display_score_value").innerHTML = score;
           cpt++;
           event.relatedTarget.outerHTML= "";//Remove card
-        if(cpt >= 6){
+        if(cpt == 6){
           document.getElementById("cards").innerHTML = "<button id='pioche'>Pioche</button>";
           document.getElementById("pioche").addEventListener("click", pioche);
+        }
+        if(partieFin == 24){
+          pseudo = prompt("Vous avez fini la partie votre score est de " + score + " points, veuillez saisir une pseudo pour enregistrer votre score");
         }
       },
 });
