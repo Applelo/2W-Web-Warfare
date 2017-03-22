@@ -106,9 +106,11 @@ interact('.dropzone').dropzone({
 });
 
 function pioche(){
+    for (var i = 0; i < 6; i++) {
     var card = img_basic[Math.floor(Math.random()*img_basic.length)];
-    alert(card);
-    document.getElementById("cards").innerHTML = "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
+    document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
+  }
+  cpt = 0;
 }
 
 
