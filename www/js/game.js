@@ -2,9 +2,9 @@ var score = 0;
 var choose_music = ["Bad Reputation", "Duel", "Better Hand", "Don't Let Your Guard Down", "On a Roll"];
 var the_music = aleatoire(5) - 1;
 var img_legendaire = ["LegendaireBits", "LegendaireMAP"];
-var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau"];
-var img_basic = ["CSStext_decoration","HTMLvideo","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLform", "HTMLh1", "HTMLimg", "HTMLnav", "HTMLp", "HTMLsup", "HTMLtableau"];
-
+var img_epic = ["HTMLform", "HTMLnav", "HTMLtableau","HTMLvideo"];
+var img_basic = ["CSStext_decoration","HTMLprogress","CSSalign", "CSSback", "CSScolor", "CSSfont", "HTMLa", "HTMLhr", "HTMLbr", "HTMLdiv", "HTMLh1", "HTMLimg", "HTMLp", "HTMLsup"];
+var nbr_cards = 24;
 
 create_sound("the_music","m&s/music/" + choose_music[the_music] + ".mp3", "music", false);
 musics["the_music"].play();
@@ -20,7 +20,7 @@ create_sound("play_card_from_hand_2","m&s/sound/card/play_card_from_hand_2.mp3",
 create_sound("play_card_from_hand_3","m&s/sound/card/play_card_from_hand_3.mp3", "sound", false);
 create_sound("card_mouse_away","m&s/sound/card/card_mouse_away.mp3", "sound", false);
 create_sound("card_mouse_over","m&s/sound/card/card_mouse_over.mp3", "sound", false);
-pioche();
+mise();
 
 // target elements with the "draggable" class
 interact('.draggable')
@@ -103,6 +103,8 @@ interact('.dropzone').dropzone({
           HTMLsup();
         else if (getCard == "HTMLtableau")
           HTMLtable();
+        else
+          alert("doesn't exist");
 
           cpt++;
           event.relatedTarget.outerHTML= "";//Remove card
@@ -114,9 +116,24 @@ interact('.dropzone').dropzone({
 });
 
 function pioche(){
-    for (var i = 0; i < 6; i++) {
-    var card = img_basic[Math.floor(Math.random()*img_basic.length)];
-    document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
+  var i = 0;
+  var old_card = "";
+  var card = "";
+  while (i < 6) {
+    var drop_luck = aleatoire(10);
+    if (drop_luck <= 6)//Basique
+      card = img_basic[Math.floor(Math.random()*img_basic.length)];
+    else if (drop_luck >= 7 && drop_luck <= 9)//Epique
+      card = img_epic[Math.floor(Math.random()*img_epic.length)];
+    else//Legendaire
+      card = img_legendaire[Math.floor(Math.random()*img_legendaire.length)];
+
+    if (old_card != card) {
+      document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card + ".png'>";
+      i++;
+      nbr_cards--;
+    }
+    old_card = card;
   }
   sounds["play_card_from_hand_" + aleatoire(3)].play();
   cpt = 0;
@@ -125,8 +142,29 @@ function pioche(){
 
 
 function mise() {
-  element = document.getElementById("cards");
-  element.innerHTML = element.innerHTML + "<img src='img/Carte/carteHTMLvideo.png'>";
+  var i = 0;
+  var old_card = "";
+  var card = "";
+  while (i < 4) {
+    card = img_basic[Math.floor(Math.random()*img_basic.length)];
+    if (old_card != card) {
+      document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
+      i++;
+      nbr_cards--;
+    }
+    old_card = card;
+  }
+  i = 0;
+  old_card = "";
+  while (i < 2) {
+    card = img_epic[Math.floor(Math.random()*img_epic.length)];
+    if (old_card != card) {
+      document.getElementById("cards").innerHTML += "<img id='drag' card='"+ card +"' class='draggable drag-drop' src='img/Carte/carte" + card  + ".png'>";
+      i++;
+      nbr_cards--;
+    }
+    old_card = card;
+  }
 }
 
 set_volume_setting();

@@ -21,7 +21,7 @@ function HTMLdiv() {
 
 /*form : ajoute un formulaire de contact*/
 function HTMLform() {
-  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<form>Email :<br><input type='email' name='email' placeholder='Email'><br>Nom :<br><input type='text' name='nom' placeholder='Nom'><br>Message :<br><textarea placeholder='Message'></textarea><br><br><input type='submit' value='Submit'></form>";
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<form>Email :<br><input type='email' name='email' placeholder='Email'><br>Nom :<br><input type='text' name='nom' placeholder='Nom'><br>Message :<br><textarea placeholder='Message'></textarea><br><br><input type='submit' value='Envoyer'></form>";
 }
 
 /*h1 : ajoute un titre de premier niveau*/
