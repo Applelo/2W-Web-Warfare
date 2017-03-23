@@ -1,5 +1,5 @@
 /*svg: insère une forme svg*/
-function HTMLsvg() {
+function LegendaireSvg() {
   taile_cercle = aleatoire(50) + 50;
   document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<svg width='" +  taile_cercle + "' height='" +  taile_cercle + "'><circle cx='50' cy='50' r='40' stroke='green' stroke-width='4' fill='yellow' /></svg>";
   return taile_cercle ;

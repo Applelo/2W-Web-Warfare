@@ -95,11 +95,11 @@ function dragMoveListener(event) {
 
 interact('.dropzone').dropzone({
     // Require a 75% element overlap for a drop to be possible
-    overlap: 0.25,
+    overlap: 0.5,
     ondrop: function(event) {
       var getCard = event.relatedTarget.getAttribute("card");
         if (getCard == "CSSback"){
-          CSSbackground();
+            score_f = CSSbackground();
         }
         else if (getCard == "HTMLp"){
           score_f = HTMLp();
@@ -152,17 +152,14 @@ interact('.dropzone').dropzone({
         else if (getCard == "HTMLtableau"){
           score_f  =HTMLtable();
         }
-        else if (getCard == "LegendaireSvg"){
-          score_f = LegendaireSvg();
-        }
         else if (getCard == "HTMLcode"){
           score_f =HTMLcode();
         }
         else if (getCard == "LegendaireBits"){
           score_f = LegendaireBits();
         }
-        else if (getCard == "LegendaireBits"){
-          score_f = LegendaireBits();
+        else if (getCard == "LegendaireSvg"){
+          score_f = LegendaireSvg();
         }
         else if (getCard == "LegendaireColor"){
           score_f = LegendaireColor();
@@ -199,7 +196,10 @@ interact('.dropzone').dropzone({
         }
         if(partieFin == 24){
           sounds["end_voice"].play();
-          var pseudo = prompt("Vous avez fini la partie votre score est de " + score + " points, veuillez saisir une pseudo pour enregistrer votre score");
+          var pseudo = null;
+          while (pseudo == null) {
+            pseudo = prompt("Vous avez fini la partie votre score est de " + score + " points, veuillez saisir une pseudo pour enregistrer votre score");
+          }
           add_score(pseudo, score);
           window.location.replace('./main.html');
         }

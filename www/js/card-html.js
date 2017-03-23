@@ -25,7 +25,7 @@ function HTMLdiv() {
 
 /*form : ajoute un formulaire de contact*/
 function HTMLform() {
-  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<form>Email :<br><input type='email' name='email' placeholder='Email'><br>Nom :<br><input type='text' name='nom' placeholder='Nom'><br>Message :<br><textarea placeholder='Message'></textarea><br><br><input type='submit' value='Envoyer'></form>";
+  document.getElementById("outer-dropzone").innerHTML = document.getElementById("outer-dropzone").innerHTML + "<form>Email :<br><input type='email' name='email' placeholder='Email' disabled><br>Nom :<br><input type='text' name='nom' placeholder='Nom' disabled><br>Message :<br><textarea placeholder='Message' disabled></textarea><br><br><input type='submit' value='Envoyer' disabled></form>";
   return 2;
 }
 
